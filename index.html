@@ -19,7 +19,7 @@
     ajaxTime = ajaxTime.getTime();
 
 
-    $.ajax({
+    var test = $.ajax({
       type: "GET",
       url: "https://cpmet-ufpel.github.io/megatron/data/chuva.json?"+ajaxTime,
       dataType: "json",
@@ -44,7 +44,7 @@
 
     });
 
-
+    console.log(test)
 
 
   </script>
