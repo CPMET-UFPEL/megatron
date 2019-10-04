@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>CPPMET - Meteorologia UFPEL</title>
+
+</head>
+<body>
+
+  <div id="chuva"></div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
+
+  <script type="text/javascript">
+    var ajaxTime = new Date();
+    ajaxTime = ajaxTime.getTime();
+
+
+    $.ajax({
+      type: "GET",
+      //url: "http://cppmet.ufpel.edu.br/cppmet/previsao/tempo1.xml",
+      url: "https://cpmet-ufpel.github.io/megatron/data/chuva.json?"+ajaxTime,
+      dataType: "json",
+      success: function (data) {
+          console.log(data);
+          
+          var dados_html = ''
+          data.map(content => {
+            dados_html += ' <br> ';
+            content.map(content => {
+              dados_html += ' '+content
+            });
+          });
+
+          $('#chuva').html(options);
+          
+
+      },
+      error: function (s) {
+          alert("Ocorreu um erro inesperado durante o processamento.");
+          console.log(s)
+      }
+
+    });
+
+
+
+
+  </script>
+  </body>
+</html>
