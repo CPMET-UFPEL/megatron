@@ -19,11 +19,8 @@
     ajaxTime = ajaxTime.getTime();
 
 
-    var test = $.ajax({
-      type: "GET",
-      url: "https://cpmet-ufpel.github.io/megatron/data/chuva.json?"+ajaxTime,
-      dataType: "json",
-      success: function (data) {
+    $.get("https://cpmet-ufpel.github.io/megatron/data/chuva.json?"+ajaxTime,
+      function (data) {
           console.log('foi',data);
           
           var dados_html = '';
@@ -36,15 +33,10 @@
           $('#chuva').html(dados_html);
           
 
-      },
-      error: function (s) {
-          alert("Ocorreu um erro inesperado durante o processamento.");
-          console.log('erro',s)
       }
+    );
 
-    });
-
-    console.log(test)
+    
 
 
   </script>
