@@ -20,11 +20,10 @@
 
 
     $.ajax({
-      type: "GET",
-      //url: "http://cppmet.ufpel.edu.br/cppmet/previsao/tempo1.xml",
       url: "https://cpmet-ufpel.github.io/megatron/data/chuva.json?"+ajaxTime,
-      dataType: "json",
-      success: function (data) {
+      dataType: "json"
+    })
+      .done( function (data) {
           console.log(data);
           
           var dados_html = ''
@@ -34,16 +33,12 @@
            
           });
 
-          $('#chuva').html(options);
+          $('#chuva').html(dados_html);
           
 
-      },
-      error: function (s) {
-          alert("Ocorreu um erro inesperado durante o processamento.");
-          console.log('erro',s)
-      }
+      })
 
-    });
+    
 
 
 
