@@ -27,14 +27,11 @@
           console.log(data);
           
           var dados_html = '';
-          for(var e in data) {
-             console.log(data[e]);
+          for(var estacao in data) {
+             console.log(data[estacao]);
+             dados_html += estacao+' '+data[estacao][0]+' '+data[estacao][1]+' '+data[estacao][2];
           }
-          data.map(content => {
-            console.log(content)
-            dados_html += ' <br> '+content;
-           
-          });
+          
 
           $('#chuva').html(dados_html);
           
