@@ -10,7 +10,7 @@
 
   <div id="chuva"></div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="jquery.min.js"></script>
 
 
 
@@ -22,10 +22,10 @@
     $.ajax({
       type: "GET",
       url: "https://cpmet-ufpel.github.io/megatron/data/chuva.json?"+ajaxTime,
-      contentType: "application/json; charset=utf-8",
+      contentType: "json",
       success: function (data) {
           console.log('foi',data);
-          
+          /*
           var dados_html = '';
           data.map(content => {
             console.log(content)
@@ -34,7 +34,7 @@
           });
 
           $('#chuva').html(dados_html);
-          
+          */
 
       },
       error: function (s) {
