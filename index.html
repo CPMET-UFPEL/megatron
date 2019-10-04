@@ -29,10 +29,9 @@
           
           var dados_html = ''
           data.map(content => {
+            console.log(content)
             dados_html += ' <br> ';
-            content.map(content => {
-              dados_html += ' '+content
-            });
+           
           });
 
           $('#chuva').html(options);
@@ -41,7 +40,7 @@
       },
       error: function (s) {
           alert("Ocorreu um erro inesperado durante o processamento.");
-          console.log(s)
+          console.log('erro',s)
       }
 
     });
