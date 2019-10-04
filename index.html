@@ -24,17 +24,20 @@
       url: "https://cpmet-ufpel.github.io/megatron/data/chuva.json?"+ajaxTime,
       contentType: "json",
       success: function (data) {
-          console.log('foi',data);
-          /*
+          console.log(data);
+          
           var dados_html = '';
+          for(var e in data) {
+             console.log(data[e]);
+          }
           data.map(content => {
             console.log(content)
-            dados_html += ' <br> ';
+            dados_html += ' <br> '+content;
            
           });
 
           $('#chuva').html(dados_html);
-          */
+          
 
       },
       error: function (s) {
